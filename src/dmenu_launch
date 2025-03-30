@@ -1,2 +1,2 @@
 #!/bin/sh
-dmenu_apps | dmenu "$@" | awk '{print "xdg-launch " $1}' | ${SHELL:-"/bin/sh"} &
+dmenu_apps | dmenu "$@" | xargs -d '\n' xdg-launch &
